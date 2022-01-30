@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblComBookLib = new System.Windows.Forms.Label();
             this.lblISBN = new System.Windows.Forms.Label();
             this.lblAuthor = new System.Windows.Forms.Label();
@@ -52,6 +53,9 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
+            this.lblAvailable = new System.Windows.Forms.Label();
+            this.chkAvailable = new System.Windows.Forms.CheckBox();
+            this.toolTipLibrary = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblComBookLib
@@ -70,7 +74,7 @@
             // lblISBN
             // 
             this.lblISBN.AutoSize = true;
-            this.lblISBN.Location = new System.Drawing.Point(88, 138);
+            this.lblISBN.Location = new System.Drawing.Point(88, 112);
             this.lblISBN.Name = "lblISBN";
             this.lblISBN.Size = new System.Drawing.Size(38, 16);
             this.lblISBN.TabIndex = 1;
@@ -79,7 +83,7 @@
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Location = new System.Drawing.Point(88, 174);
+            this.lblAuthor.Location = new System.Drawing.Point(88, 148);
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(45, 16);
             this.lblAuthor.TabIndex = 2;
@@ -88,7 +92,7 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(88, 212);
+            this.lblTitle.Location = new System.Drawing.Point(88, 186);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(33, 16);
             this.lblTitle.TabIndex = 3;
@@ -97,7 +101,7 @@
             // lblGenre
             // 
             this.lblGenre.AutoSize = true;
-            this.lblGenre.Location = new System.Drawing.Point(89, 251);
+            this.lblGenre.Location = new System.Drawing.Point(89, 225);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(44, 16);
             this.lblGenre.TabIndex = 4;
@@ -106,7 +110,7 @@
             // lblPublisher
             // 
             this.lblPublisher.AutoSize = true;
-            this.lblPublisher.Location = new System.Drawing.Point(89, 288);
+            this.lblPublisher.Location = new System.Drawing.Point(89, 262);
             this.lblPublisher.Name = "lblPublisher";
             this.lblPublisher.Size = new System.Drawing.Size(63, 16);
             this.lblPublisher.TabIndex = 5;
@@ -115,7 +119,7 @@
             // lblYearPub
             // 
             this.lblYearPub.AutoSize = true;
-            this.lblYearPub.Location = new System.Drawing.Point(88, 322);
+            this.lblYearPub.Location = new System.Drawing.Point(88, 296);
             this.lblYearPub.Name = "lblYearPub";
             this.lblYearPub.Size = new System.Drawing.Size(99, 16);
             this.lblYearPub.TabIndex = 6;
@@ -123,50 +127,55 @@
             // 
             // txtISBN
             // 
-            this.txtISBN.Location = new System.Drawing.Point(202, 132);
+            this.txtISBN.Location = new System.Drawing.Point(202, 106);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(305, 22);
             this.txtISBN.TabIndex = 7;
             this.txtISBN.Text = "000-0-00-000000-0";
+            this.txtISBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTipLibrary.SetToolTip(this.txtISBN, "An ISBN is a 13 digit International Standard Book Number.");
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(202, 209);
+            this.txtTitle.Location = new System.Drawing.Point(202, 183);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(305, 22);
             this.txtTitle.TabIndex = 8;
             // 
             // txtGenre
             // 
-            this.txtGenre.Location = new System.Drawing.Point(202, 245);
+            this.txtGenre.Location = new System.Drawing.Point(202, 219);
             this.txtGenre.Name = "txtGenre";
             this.txtGenre.Size = new System.Drawing.Size(305, 22);
             this.txtGenre.TabIndex = 9;
             // 
             // txtPub
             // 
-            this.txtPub.Location = new System.Drawing.Point(202, 282);
+            this.txtPub.Location = new System.Drawing.Point(202, 256);
             this.txtPub.Name = "txtPub";
             this.txtPub.Size = new System.Drawing.Size(305, 22);
             this.txtPub.TabIndex = 10;
+            this.toolTipLibrary.SetToolTip(this.txtPub, "Surname, First Name");
             // 
             // txtYearPub
             // 
-            this.txtYearPub.Location = new System.Drawing.Point(202, 316);
+            this.txtYearPub.Location = new System.Drawing.Point(202, 290);
             this.txtYearPub.Name = "txtYearPub";
             this.txtYearPub.Size = new System.Drawing.Size(305, 22);
             this.txtYearPub.TabIndex = 11;
+            this.toolTipLibrary.SetToolTip(this.txtYearPub, "Please Enter as a whole Number.");
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(202, 168);
+            this.txtAuthor.Location = new System.Drawing.Point(202, 142);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(305, 22);
             this.txtAuthor.TabIndex = 12;
+            this.toolTipLibrary.SetToolTip(this.txtAuthor, "Surname, First Name");
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(538, 131);
+            this.btnUpdate.Location = new System.Drawing.Point(538, 105);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 23);
             this.btnUpdate.TabIndex = 13;
@@ -176,48 +185,53 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(538, 167);
+            this.btnAdd.Location = new System.Drawing.Point(538, 141);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 23);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(538, 205);
+            this.btnDelete.Location = new System.Drawing.Point(538, 179);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 23);
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(538, 244);
+            this.btnSearch.Location = new System.Drawing.Point(538, 218);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(94, 23);
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "&Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(538, 281);
+            this.btnCancel.Location = new System.Drawing.Point(538, 255);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 23);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblExit
             // 
-            this.lblExit.Location = new System.Drawing.Point(538, 315);
+            this.lblExit.Location = new System.Drawing.Point(538, 289);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(94, 23);
             this.lblExit.TabIndex = 18;
             this.lblExit.Text = "&Exit";
             this.lblExit.UseVisualStyleBackColor = true;
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // txtNumRecords
             // 
@@ -227,6 +241,7 @@
             this.txtNumRecords.TabIndex = 19;
             this.txtNumRecords.Text = "1 of 15";
             this.txtNumRecords.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNumRecords.TextChanged += new System.EventHandler(this.txtNumRecords_TextChanged);
             // 
             // btnLast
             // 
@@ -236,6 +251,7 @@
             this.btnLast.TabIndex = 20;
             this.btnLast.Text = "Last";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnNext
             // 
@@ -243,8 +259,9 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(94, 23);
             this.btnNext.TabIndex = 21;
-            this.btnNext.Text = "Next  >>";
+            this.btnNext.Text = "Next  >";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
@@ -252,8 +269,9 @@
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(94, 23);
             this.btnPrevious.TabIndex = 22;
-            this.btnPrevious.Text = "<< Previous";
+            this.btnPrevious.Text = "< Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnFirst
             // 
@@ -263,6 +281,30 @@
             this.btnFirst.TabIndex = 23;
             this.btnFirst.Text = "First";
             this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
+            // lblAvailable
+            // 
+            this.lblAvailable.AutoSize = true;
+            this.lblAvailable.Location = new System.Drawing.Point(89, 329);
+            this.lblAvailable.Name = "lblAvailable";
+            this.lblAvailable.Size = new System.Drawing.Size(56, 16);
+            this.lblAvailable.TabIndex = 24;
+            this.lblAvailable.Text = "Availale";
+            // 
+            // chkAvailable
+            // 
+            this.chkAvailable.AutoSize = true;
+            this.chkAvailable.Location = new System.Drawing.Point(202, 329);
+            this.chkAvailable.Name = "chkAvailable";
+            this.chkAvailable.Size = new System.Drawing.Size(18, 17);
+            this.chkAvailable.TabIndex = 25;
+            this.chkAvailable.UseVisualStyleBackColor = true;
+            // 
+            // toolTipLibrary
+            // 
+            this.toolTipLibrary.AutomaticDelay = 250;
+            this.toolTipLibrary.IsBalloon = true;
             // 
             // Frm1
             // 
@@ -270,6 +312,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkAvailable);
+            this.Controls.Add(this.lblAvailable);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
@@ -328,6 +372,9 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Label lblAvailable;
+        private System.Windows.Forms.CheckBox chkAvailable;
+        private System.Windows.Forms.ToolTip toolTipLibrary;
     }
 }
 

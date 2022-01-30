@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.grbSelectValues = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnRun = new System.Windows.Forms.Button();
+            this.cboOperator = new System.Windows.Forms.ComboBox();
+            this.cboValue = new System.Windows.Forms.ComboBox();
+            this.cboField = new System.Windows.Forms.ComboBox();
+            this.lblValue = new System.Windows.Forms.Label();
             this.lblField = new System.Windows.Forms.Label();
             this.lblOperator = new System.Windows.Forms.Label();
-            this.lblValue = new System.Windows.Forms.Label();
-            this.cboField = new System.Windows.Forms.ComboBox();
-            this.cboValue = new System.Windows.Forms.ComboBox();
-            this.cboOperator = new System.Windows.Forms.ComboBox();
-            this.btnRun = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +66,57 @@
             this.grbSelectValues.TabStop = false;
             this.grbSelectValues.Text = "Select Values";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(614, 89);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // btnRun
+            // 
+            this.btnRun.Location = new System.Drawing.Point(614, 43);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(75, 23);
+            this.btnRun.TabIndex = 6;
+            this.btnRun.Text = "Run";
+            this.btnRun.UseVisualStyleBackColor = true;
+            // 
+            // cboOperator
+            // 
+            this.cboOperator.FormattingEnabled = true;
+            this.cboOperator.Location = new System.Drawing.Point(195, 88);
+            this.cboOperator.Name = "cboOperator";
+            this.cboOperator.Size = new System.Drawing.Size(173, 24);
+            this.cboOperator.TabIndex = 5;
+            // 
+            // cboValue
+            // 
+            this.cboValue.FormattingEnabled = true;
+            this.cboValue.Location = new System.Drawing.Point(415, 88);
+            this.cboValue.Name = "cboValue";
+            this.cboValue.Size = new System.Drawing.Size(121, 24);
+            this.cboValue.TabIndex = 4;
+            // 
+            // cboField
+            // 
+            this.cboField.FormattingEnabled = true;
+            this.cboField.Location = new System.Drawing.Point(21, 88);
+            this.cboField.Name = "cboField";
+            this.cboField.Size = new System.Drawing.Size(121, 24);
+            this.cboField.TabIndex = 1;
+            // 
+            // lblValue
+            // 
+            this.lblValue.AutoSize = true;
+            this.lblValue.Location = new System.Drawing.Point(412, 43);
+            this.lblValue.Name = "lblValue";
+            this.lblValue.Size = new System.Drawing.Size(42, 16);
+            this.lblValue.TabIndex = 3;
+            this.lblValue.Text = "Value";
+            // 
             // lblField
             // 
             this.lblField.AutoSize = true;
@@ -83,57 +134,6 @@
             this.lblOperator.Size = new System.Drawing.Size(60, 16);
             this.lblOperator.TabIndex = 2;
             this.lblOperator.Text = "Operator";
-            // 
-            // lblValue
-            // 
-            this.lblValue.AutoSize = true;
-            this.lblValue.Location = new System.Drawing.Point(412, 43);
-            this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(42, 16);
-            this.lblValue.TabIndex = 3;
-            this.lblValue.Text = "Value";
-            // 
-            // cboField
-            // 
-            this.cboField.FormattingEnabled = true;
-            this.cboField.Location = new System.Drawing.Point(21, 88);
-            this.cboField.Name = "cboField";
-            this.cboField.Size = new System.Drawing.Size(121, 24);
-            this.cboField.TabIndex = 1;
-            // 
-            // cboValue
-            // 
-            this.cboValue.FormattingEnabled = true;
-            this.cboValue.Location = new System.Drawing.Point(415, 88);
-            this.cboValue.Name = "cboValue";
-            this.cboValue.Size = new System.Drawing.Size(121, 24);
-            this.cboValue.TabIndex = 4;
-            // 
-            // cboOperator
-            // 
-            this.cboOperator.FormattingEnabled = true;
-            this.cboOperator.Location = new System.Drawing.Point(195, 88);
-            this.cboOperator.Name = "cboOperator";
-            this.cboOperator.Size = new System.Drawing.Size(173, 24);
-            this.cboOperator.TabIndex = 5;
-            // 
-            // btnRun
-            // 
-            this.btnRun.Location = new System.Drawing.Point(614, 43);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(75, 23);
-            this.btnRun.TabIndex = 6;
-            this.btnRun.Text = "Run";
-            this.btnRun.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(614, 89);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 7;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -214,6 +214,7 @@
             this.Controls.Add(this.grbSelectValues);
             this.Name = "frmSearch";
             this.Text = "Search Form";
+            this.Load += new System.EventHandler(this.frmSearch_Load);
             this.grbSelectValues.ResumeLayout(false);
             this.grbSelectValues.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

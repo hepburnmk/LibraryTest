@@ -21,5 +21,10 @@ namespace LibraryTest
         {
 
         }
+
+        private void frmSearch_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
