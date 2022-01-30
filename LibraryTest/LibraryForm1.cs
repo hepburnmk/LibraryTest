@@ -20,9 +20,10 @@ namespace LibraryTest
 
 
        
-            //Connection String to DB, Step 4
+            // Connection String to DB, Step 4
+            // Catalogue != Catalog :)
 
-        string DBConnectionString = @"Data Source=DESKTOP-EPUM9AK\SQLSERVER2019;Initial Catalogue=Library;Integrated Security=True;";
+        string DBConnectionString = @"Data Source=DESKTOP-EPUM9AK\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True;";
 
 
 
@@ -39,13 +40,15 @@ namespace LibraryTest
 
         private void Frm1_Load(object sender, EventArgs e)
         {
-            //Step 4. Setting up connection. Creating instance of booksDataAdaptor
-            //Passing SELECT statement & connection string
+            // Step 4. Setting up connection. Creating instance of booksDataAdaptor
+            // Passing SELECT statement & connection string
 
-            booksDataAdapter = new SqlDataAdapter("SELECT FROM + FROM tblBooks", DBConnectionString);
+            booksDataAdapter = new SqlDataAdapter("SELECT * FROM tblBooks", DBConnectionString);
             booksDataAdapter.Fill(booksDataset, "tblBooks");
             MessageBox.Show("Connected to DB");
         }
+
+        
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -53,7 +56,7 @@ namespace LibraryTest
             dbSQLCommands = new SqlCommandBuilder(booksDataAdapter);
             booksDataAdapter.Update(booksDataset,"tblBooks");
             
-            MessageBox.Show("Databas Successfully Updated");
+            MessageBox.Show("Database Successfully Updated");
 
         }
     }
