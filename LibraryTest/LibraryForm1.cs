@@ -19,9 +19,9 @@ namespace LibraryTest
         SqlCommandBuilder dbSQLCommands;
 
 
-       
-            // Connection String to DB, Step 4
-            // Catalogue != Catalog :)
+
+        // Connection String to DB, Step 4
+        // Catalogue != Catalog :)
 
         string DBConnectionString = @"Data Source=DESKTOP-EPUM9AK\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True;";
 
@@ -32,11 +32,11 @@ namespace LibraryTest
         {
             InitializeComponent();
 
-// Step 3, Show name, today's date 
+            // Step 3, Show name, today's date 
 
             this.Text = "Book Details  - Date: " + DateTime.Today.ToLongDateString();
         }
-          
+
 
         private void Frm1_Load(object sender, EventArgs e)
         {
@@ -56,8 +56,8 @@ namespace LibraryTest
                 MessageBox.Show(ex.GetType().ToString() + ":" + ex.Message);
                 Application.Exit();
             }
-            
-            
+
+
             // Binds our textboxes to our data in SQL Server
             BindControls();
             // First call to numRecordsCountDisplay() 
@@ -66,8 +66,8 @@ namespace LibraryTest
 
             numRecordsCountDisplay();
 
-           booksBindingSource.PositionChanged += rowPositionChanged;
-            
+            booksBindingSource.PositionChanged += rowPositionChanged;
+
 
 
         }
@@ -94,7 +94,7 @@ namespace LibraryTest
 
             txtPub.DataBindings.Add("Text", booksBindingSource, "Publisher");
 
-           
+
             // Return to this, int??
             txtYearPub.DataBindings.Add("Text", booksBindingSource, "YearPublished");
 
@@ -110,7 +110,7 @@ namespace LibraryTest
         // in the textboxes
         // The booksDataSet to interact with the table.
 
-        
+
         // Apply any pending changes to dataset
         //Step 10 Error Handling
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -122,11 +122,11 @@ namespace LibraryTest
                 dbSQLCommands = new SqlCommandBuilder(booksDataAdapter); // connecting data adaptor to SQl builder
                 booksDataAdapter.Update(booksDataset, "tblBooks");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);  
+                MessageBox.Show(ex.Message);
             }
-            
+
             MessageBox.Show("Database Successfully Updated");
 
         }
@@ -142,7 +142,7 @@ namespace LibraryTest
         // remove current row
         private void btnDelete_Click(object sender, EventArgs e)
         {
-         
+
             booksBindingSource.RemoveCurrent();
         }
 
@@ -156,7 +156,7 @@ namespace LibraryTest
         {
 
             // Cancel editing of current row
-            
+
             booksBindingSource.CancelEdit();
 
             // Rollback changes made to data
@@ -167,7 +167,7 @@ namespace LibraryTest
         // Step 9
         //index no 1 is 0, +1 to make it more readable
         private void numRecordsCountDisplay()
-        
+
         {
 
             txtNumRecords.Text = String.Format(" {0} of {1} ", booksBindingSource.Position + 1, booksBindingSource.Count);
