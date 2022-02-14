@@ -95,7 +95,7 @@ namespace LibraryTest
             txtPub.DataBindings.Add("Text", booksBindingSource, "Publisher");
 
 
-            // Return to this, int??
+            // Return to this, I believe it should be 'int', but I am getting red lines??
             txtYearPub.DataBindings.Add("Text", booksBindingSource, "YearPublished");
 
             chkAvailable.DataBindings.Add("Checked", booksBindingSource, "Available", true);
@@ -145,10 +145,11 @@ namespace LibraryTest
 
             booksBindingSource.RemoveCurrent();
         }
-
+        
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            frmSearch searchFrom = new frmSearch();
+            searchFrom.Show();
         }
 
         //Cancel Row

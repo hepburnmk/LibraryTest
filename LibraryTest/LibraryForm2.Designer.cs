@@ -74,6 +74,7 @@
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnRun
             // 
@@ -83,6 +84,7 @@
             this.btnRun.TabIndex = 6;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // cboOperator
             // 
@@ -233,6 +235,7 @@
         private System.Windows.Forms.Label lblValue;
         private System.Windows.Forms.Label lblField;
         private System.Windows.Forms.Label lblOperator;
+        private System.Windows.Forms.TextBox textBoxFilterValue;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ISBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
