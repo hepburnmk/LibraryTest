@@ -235,6 +235,7 @@
         private System.Windows.Forms.Label lblValue;
         private System.Windows.Forms.Label lblField;
         private System.Windows.Forms.Label lblOperator;
+        private System.Windows.Forms.TextBox textBoxFilterValue;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ISBN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
