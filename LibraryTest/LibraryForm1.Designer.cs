@@ -132,8 +132,8 @@
             this.txtISBN.Size = new System.Drawing.Size(305, 22);
             this.txtISBN.TabIndex = 7;
             this.txtISBN.Text = "000-0-00-000000-0";
-            this.txtISBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.toolTipLibrary.SetToolTip(this.txtISBN, "An ISBN is a 13 digit International Standard Book Number.");
+            this.txtISBN.TextChanged += new System.EventHandler(this.txtISBN_TextChanged);
             // 
             // txtTitle
             // 
