@@ -76,6 +76,11 @@ namespace LibraryTest
                 MessageBox.Show(booksTableView.Count.ToString() + " matching rows found.");
             }
         }
+
+        private void lblField_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

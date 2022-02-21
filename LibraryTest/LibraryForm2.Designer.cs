@@ -89,7 +89,7 @@
             // cboOperator
             // 
             this.cboOperator.FormattingEnabled = true;
-            this.cboOperator.Location = new System.Drawing.Point(195, 88);
+            this.cboOperator.Location = new System.Drawing.Point(21, 103);
             this.cboOperator.Name = "cboOperator";
             this.cboOperator.Size = new System.Drawing.Size(173, 24);
             this.cboOperator.TabIndex = 5;
@@ -105,7 +105,7 @@
             // cboField
             // 
             this.cboField.FormattingEnabled = true;
-            this.cboField.Location = new System.Drawing.Point(21, 88);
+            this.cboField.Location = new System.Drawing.Point(333, 88);
             this.cboField.Name = "cboField";
             this.cboField.Size = new System.Drawing.Size(121, 24);
             this.cboField.TabIndex = 1;
@@ -127,6 +127,7 @@
             this.lblField.Size = new System.Drawing.Size(37, 16);
             this.lblField.TabIndex = 1;
             this.lblField.Text = "Field";
+            this.lblField.Click += new System.EventHandler(this.lblField_Click);
             // 
             // lblOperator
             // 

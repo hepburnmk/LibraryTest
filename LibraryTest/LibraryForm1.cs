@@ -210,5 +210,10 @@ namespace LibraryTest
         {
             Application.Exit(); //exit Windows program
         }
+
+        private void txtISBN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
