@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -9,25 +10,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LibraryTest
 {
     public partial class frmSearch : Form
 
     {
-        Frm1 callingForm;
+        FrmBooks callingForm;
         DataView booksTableView;
 
 
-        public frmSearch()
+        public frmSearch(FrmBooks bookForm, DataSet dataSet)
         {
             InitializeComponent();
-            this.dataGridView1.Rows.Add("1", "XX");
+            callingForm = bookForm;
+            callingForm.Hide();
+            booksTableView = new DataView(dataSet.Tables["tblBooks"]);
+           
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+    // I don not really know what O am doing in this section. 
 
         private void frmSearch_Load(object sender, EventArgs e)
         {
@@ -35,13 +37,14 @@ namespace LibraryTest
             dataGridView1.Columns["YearPublished"].
                 DefaultCellStyle.Format = "int";
 
+
             this.Text = "Task A Search - Megan Kelly - Date: " +
                 DateTime.Now.ToShortDateString();
 
             cboField.Items.Add("Author");
             cboField.Items.Add("Title");
             cboField.Items.Add("Genre");
-            cboField.Items.Add("Available");
+            cboField.Items.Add("Year");
 
 
             cboOperator.Items.Add("=");
@@ -49,6 +52,9 @@ namespace LibraryTest
             cboOperator.Items.Add(">");
             cboOperator.Items.Add("<=");
             cboOperator.Items.Add(">=");
+
+            this.Text = "Task A Search - Megan Kelly - Date: " +
+               DateTime.Now.ToShortDateString();
 
         }
 
@@ -78,6 +84,31 @@ namespace LibraryTest
         }
 
         private void lblField_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboOperator_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboField_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grbSelectValues_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace LibraryTest
 {
-    partial class Frm1
+    partial class FrmBooks
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblComBookLib = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBooks));
+            this.lblBookLoanLocal = new System.Windows.Forms.Label();
             this.lblISBN = new System.Windows.Forms.Label();
             this.lblAuthor = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -56,20 +57,23 @@
             this.lblAvailable = new System.Windows.Forms.Label();
             this.chkAvailable = new System.Windows.Forms.CheckBox();
             this.toolTipLibrary = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblComBookLib
+            // lblBookLoanLocal
             // 
-            this.lblComBookLib.AutoSize = true;
-            this.lblComBookLib.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.lblComBookLib.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblComBookLib.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComBookLib.ForeColor = System.Drawing.Color.Teal;
-            this.lblComBookLib.Location = new System.Drawing.Point(202, 25);
-            this.lblComBookLib.Name = "lblComBookLib";
-            this.lblComBookLib.Size = new System.Drawing.Size(367, 48);
-            this.lblComBookLib.TabIndex = 0;
-            this.lblComBookLib.Text = "Community Library ";
+            this.lblBookLoanLocal.AutoSize = true;
+            this.lblBookLoanLocal.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.lblBookLoanLocal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBookLoanLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookLoanLocal.ForeColor = System.Drawing.Color.Teal;
+            this.lblBookLoanLocal.Location = new System.Drawing.Point(202, 25);
+            this.lblBookLoanLocal.Name = "lblBookLoanLocal";
+            this.lblBookLoanLocal.Size = new System.Drawing.Size(323, 48);
+            this.lblBookLoanLocal.TabIndex = 0;
+            this.lblBookLoanLocal.Text = "Book Loan Local";
+            this.lblBookLoanLocal.Click += new System.EventHandler(this.lblComBookLib_Click);
             // 
             // lblISBN
             // 
@@ -306,12 +310,24 @@
             this.toolTipLibrary.AutomaticDelay = 250;
             this.toolTipLibrary.IsBalloon = true;
             // 
-            // Frm1
+            // pictureBox1
+            // 
+            this.pictureBox1.AccessibleName = "Picture of Books";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(538, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(104, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
+            // FrmBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chkAvailable);
             this.Controls.Add(this.lblAvailable);
             this.Controls.Add(this.btnFirst);
@@ -337,10 +353,11 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblAuthor);
             this.Controls.Add(this.lblISBN);
-            this.Controls.Add(this.lblComBookLib);
-            this.Name = "Frm1";
+            this.Controls.Add(this.lblBookLoanLocal);
+            this.Name = "FrmBooks";
             this.Text = "Library Form1";
             this.Load += new System.EventHandler(this.Frm1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,7 +365,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblComBookLib;
+        private System.Windows.Forms.Label lblBookLoanLocal;
         private System.Windows.Forms.Label lblISBN;
         private System.Windows.Forms.Label lblAuthor;
         private System.Windows.Forms.Label lblTitle;
@@ -375,6 +392,7 @@
         private System.Windows.Forms.Label lblAvailable;
         private System.Windows.Forms.CheckBox chkAvailable;
         private System.Windows.Forms.ToolTip toolTipLibrary;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

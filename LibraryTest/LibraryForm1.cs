@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace LibraryTest
 {   // BindingSource links controls in VS to data in DB
-    public partial class Frm1 : Form
+    public partial class FrmBooks : Form
     {
         DataSet booksDataset = new DataSet();
         SqlDataAdapter booksDataAdapter;
@@ -28,7 +29,7 @@ namespace LibraryTest
 
 
 
-        public Frm1()
+        public FrmBooks()
         {
             InitializeComponent();
 
@@ -212,6 +213,11 @@ namespace LibraryTest
         }
 
         private void txtISBN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblComBookLib_Click(object sender, EventArgs e)
         {
 
         }
