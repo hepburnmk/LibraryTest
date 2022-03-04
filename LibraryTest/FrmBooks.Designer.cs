@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBooks));
-            this.lblBookLoanLocal = new System.Windows.Forms.Label();
             this.lblISBN = new System.Windows.Forms.Label();
             this.lblAuthor = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -54,86 +53,71 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
-            this.lblAvailable = new System.Windows.Forms.Label();
-            this.chkAvailable = new System.Windows.Forms.CheckBox();
             this.toolTipLibrary = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSynopsis = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblBookLoanLocal
-            // 
-            this.lblBookLoanLocal.AutoSize = true;
-            this.lblBookLoanLocal.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.lblBookLoanLocal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblBookLoanLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookLoanLocal.ForeColor = System.Drawing.Color.Teal;
-            this.lblBookLoanLocal.Location = new System.Drawing.Point(202, 25);
-            this.lblBookLoanLocal.Name = "lblBookLoanLocal";
-            this.lblBookLoanLocal.Size = new System.Drawing.Size(323, 48);
-            this.lblBookLoanLocal.TabIndex = 0;
-            this.lblBookLoanLocal.Text = "Book Loan Local";
-            this.lblBookLoanLocal.Click += new System.EventHandler(this.lblComBookLib_Click);
-            // 
             // lblISBN
             // 
             this.lblISBN.AutoSize = true;
-            this.lblISBN.Location = new System.Drawing.Point(88, 112);
+            this.lblISBN.Location = new System.Drawing.Point(88, 126);
             this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(38, 16);
+            this.lblISBN.Size = new System.Drawing.Size(39, 18);
             this.lblISBN.TabIndex = 1;
             this.lblISBN.Text = "ISBN";
             // 
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Location = new System.Drawing.Point(88, 148);
+            this.lblAuthor.Location = new System.Drawing.Point(88, 166);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(45, 16);
+            this.lblAuthor.Size = new System.Drawing.Size(53, 18);
             this.lblAuthor.TabIndex = 2;
             this.lblAuthor.Text = "Author";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(88, 186);
+            this.lblTitle.Location = new System.Drawing.Point(88, 209);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(33, 16);
+            this.lblTitle.Size = new System.Drawing.Size(35, 18);
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Title";
             // 
             // lblGenre
             // 
             this.lblGenre.AutoSize = true;
-            this.lblGenre.Location = new System.Drawing.Point(89, 225);
+            this.lblGenre.Location = new System.Drawing.Point(89, 253);
             this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(44, 16);
+            this.lblGenre.Size = new System.Drawing.Size(46, 18);
             this.lblGenre.TabIndex = 4;
             this.lblGenre.Text = "Genre";
             // 
             // lblPublisher
             // 
             this.lblPublisher.AutoSize = true;
-            this.lblPublisher.Location = new System.Drawing.Point(89, 262);
+            this.lblPublisher.Location = new System.Drawing.Point(89, 295);
             this.lblPublisher.Name = "lblPublisher";
-            this.lblPublisher.Size = new System.Drawing.Size(63, 16);
+            this.lblPublisher.Size = new System.Drawing.Size(65, 18);
             this.lblPublisher.TabIndex = 5;
             this.lblPublisher.Text = "Publisher";
             // 
             // lblYearPub
             // 
             this.lblYearPub.AutoSize = true;
-            this.lblYearPub.Location = new System.Drawing.Point(88, 296);
+            this.lblYearPub.Location = new System.Drawing.Point(88, 333);
             this.lblYearPub.Name = "lblYearPub";
-            this.lblYearPub.Size = new System.Drawing.Size(99, 16);
+            this.lblYearPub.Size = new System.Drawing.Size(99, 18);
             this.lblYearPub.TabIndex = 6;
             this.lblYearPub.Text = "Year Published";
             // 
             // txtISBN
             // 
-            this.txtISBN.Location = new System.Drawing.Point(202, 106);
+            this.txtISBN.Location = new System.Drawing.Point(202, 129);
             this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(305, 22);
+            this.txtISBN.Size = new System.Drawing.Size(305, 25);
             this.txtISBN.TabIndex = 7;
             this.txtISBN.Text = "000-0-00-000000-0";
             this.toolTipLibrary.SetToolTip(this.txtISBN, "An ISBN is a 13 digit International Standard Book Number.");
@@ -141,47 +125,47 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(202, 183);
+            this.txtTitle.Location = new System.Drawing.Point(202, 206);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(305, 22);
+            this.txtTitle.Size = new System.Drawing.Size(305, 25);
             this.txtTitle.TabIndex = 8;
             // 
             // txtGenre
             // 
-            this.txtGenre.Location = new System.Drawing.Point(202, 219);
+            this.txtGenre.Location = new System.Drawing.Point(202, 246);
             this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(305, 22);
+            this.txtGenre.Size = new System.Drawing.Size(305, 25);
             this.txtGenre.TabIndex = 9;
             // 
             // txtPub
             // 
-            this.txtPub.Location = new System.Drawing.Point(202, 256);
+            this.txtPub.Location = new System.Drawing.Point(202, 288);
             this.txtPub.Name = "txtPub";
-            this.txtPub.Size = new System.Drawing.Size(305, 22);
+            this.txtPub.Size = new System.Drawing.Size(305, 25);
             this.txtPub.TabIndex = 10;
             this.toolTipLibrary.SetToolTip(this.txtPub, "Surname, First Name");
             // 
             // txtYearPub
             // 
-            this.txtYearPub.Location = new System.Drawing.Point(202, 290);
+            this.txtYearPub.Location = new System.Drawing.Point(202, 326);
             this.txtYearPub.Name = "txtYearPub";
-            this.txtYearPub.Size = new System.Drawing.Size(305, 22);
+            this.txtYearPub.Size = new System.Drawing.Size(305, 25);
             this.txtYearPub.TabIndex = 11;
             this.toolTipLibrary.SetToolTip(this.txtYearPub, "Please Enter as a whole Number.");
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(202, 142);
+            this.txtAuthor.Location = new System.Drawing.Point(202, 160);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(305, 22);
+            this.txtAuthor.Size = new System.Drawing.Size(305, 25);
             this.txtAuthor.TabIndex = 12;
             this.toolTipLibrary.SetToolTip(this.txtAuthor, "Surname, First Name");
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(538, 105);
+            this.btnUpdate.Location = new System.Drawing.Point(538, 118);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(94, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(94, 34);
             this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -189,9 +173,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(538, 141);
+            this.btnAdd.Location = new System.Drawing.Point(538, 159);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(94, 23);
+            this.btnAdd.Size = new System.Drawing.Size(94, 36);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -199,9 +183,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(538, 179);
+            this.btnDelete.Location = new System.Drawing.Point(538, 201);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(94, 23);
+            this.btnDelete.Size = new System.Drawing.Size(94, 37);
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -209,9 +193,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(538, 218);
+            this.btnSearch.Location = new System.Drawing.Point(538, 245);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(94, 23);
+            this.btnSearch.Size = new System.Drawing.Size(94, 35);
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "&Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -219,9 +203,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(538, 255);
+            this.btnCancel.Location = new System.Drawing.Point(538, 287);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 23);
+            this.btnCancel.Size = new System.Drawing.Size(94, 32);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -229,9 +213,9 @@
             // 
             // lblExit
             // 
-            this.lblExit.Location = new System.Drawing.Point(538, 289);
+            this.lblExit.Location = new System.Drawing.Point(538, 325);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(94, 23);
+            this.lblExit.Size = new System.Drawing.Size(94, 34);
             this.lblExit.TabIndex = 18;
             this.lblExit.Text = "&Exit";
             this.lblExit.UseVisualStyleBackColor = true;
@@ -239,19 +223,17 @@
             // 
             // txtNumRecords
             // 
-            this.txtNumRecords.Location = new System.Drawing.Point(304, 397);
+            this.txtNumRecords.Location = new System.Drawing.Point(307, 391);
             this.txtNumRecords.Name = "txtNumRecords";
-            this.txtNumRecords.Size = new System.Drawing.Size(109, 22);
+            this.txtNumRecords.Size = new System.Drawing.Size(109, 25);
             this.txtNumRecords.TabIndex = 19;
-            this.txtNumRecords.Text = "1 of 15";
             this.txtNumRecords.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNumRecords.TextChanged += new System.EventHandler(this.txtNumRecords_TextChanged);
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(529, 396);
+            this.btnLast.Location = new System.Drawing.Point(531, 384);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(94, 23);
+            this.btnLast.Size = new System.Drawing.Size(94, 39);
             this.btnLast.TabIndex = 20;
             this.btnLast.Text = "Last";
             this.btnLast.UseVisualStyleBackColor = true;
@@ -259,9 +241,9 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(429, 396);
+            this.btnNext.Location = new System.Drawing.Point(431, 384);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(94, 23);
+            this.btnNext.Size = new System.Drawing.Size(94, 39);
             this.btnNext.TabIndex = 21;
             this.btnNext.Text = "Next  >";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -269,9 +251,9 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(192, 396);
+            this.btnPrevious.Location = new System.Drawing.Point(194, 384);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(94, 23);
+            this.btnPrevious.Size = new System.Drawing.Size(94, 39);
             this.btnPrevious.TabIndex = 22;
             this.btnPrevious.Text = "< Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -279,57 +261,47 @@
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(91, 396);
+            this.btnFirst.Location = new System.Drawing.Point(93, 384);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(94, 23);
+            this.btnFirst.Size = new System.Drawing.Size(94, 39);
             this.btnFirst.TabIndex = 23;
             this.btnFirst.Text = "First";
             this.btnFirst.UseVisualStyleBackColor = true;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
-            // 
-            // lblAvailable
-            // 
-            this.lblAvailable.AutoSize = true;
-            this.lblAvailable.Location = new System.Drawing.Point(89, 329);
-            this.lblAvailable.Name = "lblAvailable";
-            this.lblAvailable.Size = new System.Drawing.Size(56, 16);
-            this.lblAvailable.TabIndex = 24;
-            this.lblAvailable.Text = "Availale";
-            // 
-            // chkAvailable
-            // 
-            this.chkAvailable.AutoSize = true;
-            this.chkAvailable.Location = new System.Drawing.Point(202, 329);
-            this.chkAvailable.Name = "chkAvailable";
-            this.chkAvailable.Size = new System.Drawing.Size(18, 17);
-            this.chkAvailable.TabIndex = 25;
-            this.chkAvailable.UseVisualStyleBackColor = true;
             // 
             // toolTipLibrary
             // 
             this.toolTipLibrary.AutomaticDelay = 250;
             this.toolTipLibrary.IsBalloon = true;
             // 
+            // btnSynopsis
+            // 
+            this.btnSynopsis.Location = new System.Drawing.Point(644, 384);
+            this.btnSynopsis.Name = "btnSynopsis";
+            this.btnSynopsis.Size = new System.Drawing.Size(129, 39);
+            this.btnSynopsis.TabIndex = 27;
+            this.btnSynopsis.Text = "See Synopsis";
+            this.btnSynopsis.UseVisualStyleBackColor = true;
+            this.btnSynopsis.Click += new System.EventHandler(this.button1_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.AccessibleName = "Picture of Books";
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(538, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(234, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 61);
+            this.pictureBox1.Size = new System.Drawing.Size(228, 105);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
             // FrmBooks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Honeydew;
+            this.ClientSize = new System.Drawing.Size(800, 506);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.chkAvailable);
-            this.Controls.Add(this.lblAvailable);
+            this.Controls.Add(this.btnSynopsis);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
@@ -353,9 +325,11 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblAuthor);
             this.Controls.Add(this.lblISBN);
-            this.Controls.Add(this.lblBookLoanLocal);
+            this.Font = new System.Drawing.Font("Proza Libre", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmBooks";
-            this.Text = "Library Form1";
+            this.Text = "Catalogue";
             this.Load += new System.EventHandler(this.Frm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -364,8 +338,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblBookLoanLocal;
         private System.Windows.Forms.Label lblISBN;
         private System.Windows.Forms.Label lblAuthor;
         private System.Windows.Forms.Label lblTitle;
@@ -389,9 +361,8 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnFirst;
-        private System.Windows.Forms.Label lblAvailable;
-        private System.Windows.Forms.CheckBox chkAvailable;
         private System.Windows.Forms.ToolTip toolTipLibrary;
+        private System.Windows.Forms.Button btnSynopsis;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
