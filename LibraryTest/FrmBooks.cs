@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace LibraryTest
 {   // BindingSource links controls in VS to data in DB
-    public partial class Frm1 : Form
+    public partial class FrmBooks : Form
     {
         DataSet booksDataset = new DataSet();
         SqlDataAdapter booksDataAdapter;
@@ -23,12 +24,12 @@ namespace LibraryTest
         // Connection String to DB, Step 4
         // Catalogue != Catalog :)
 
-        string DBConnectionString = @"Data Source=DESKTOP-EPUM9AK\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True;";
+        string DBConnectionString = @"Data Source=DESKTOP-EPUM9AK\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 
 
 
-        public Frm1()
+        public FrmBooks()
         {
             InitializeComponent();
 
@@ -40,6 +41,8 @@ namespace LibraryTest
 
         private void Frm1_Load(object sender, EventArgs e)
         {
+
+       
             //Step 10 error handling, if DB is not connected
             try
             {
@@ -93,17 +96,20 @@ namespace LibraryTest
             txtGenre.DataBindings.Add("Text", booksBindingSource, "Genre");
 
             txtPub.DataBindings.Add("Text", booksBindingSource, "Publisher");
-
-
-            // Return to this, I believe it should be 'int', but I am getting red lines??
+           
             txtYearPub.DataBindings.Add("Text", booksBindingSource, "YearPublished");
 
-            chkAvailable.DataBindings.Add("Checked", booksBindingSource, "Available", true);
+
 
 
 
 
         }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.FromArgb(31, 61, 12), ButtonBorderStyle.Solid);
+        }
+
 
         // Step 7
         // All buttons use booksBindingSource to manage the data as it's displayed
@@ -121,6 +127,7 @@ namespace LibraryTest
                 booksBindingSource.EndEdit(); // no more changes are carried through
                 dbSQLCommands = new SqlCommandBuilder(booksDataAdapter); // connecting data adaptor to SQl builder
                 booksDataAdapter.Update(booksDataset, "tblBooks");
+               
             }
             catch (Exception ex)
             {
@@ -136,6 +143,9 @@ namespace LibraryTest
         {
 
             booksBindingSource.AddNew();
+            dbSQLCommands = new SqlCommandBuilder(booksDataAdapter); // connecting data adaptor to SQl builder
+            booksDataAdapter.Update(booksDataset, "tblBooks");
+
 
         }
 
@@ -144,11 +154,14 @@ namespace LibraryTest
         {
 
             booksBindingSource.RemoveCurrent();
+            dbSQLCommands = new SqlCommandBuilder(booksDataAdapter); // connecting data adaptor to SQl builder
+            booksDataAdapter.Update(booksDataset, "tblBooks");
+            MessageBox.Show("Book Deleted");
         }
         
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            frmSearch searchFrom = new frmSearch();
+            FrmSearch searchFrom = new FrmSearch();
             searchFrom.Show();
         }
 
@@ -171,7 +184,8 @@ namespace LibraryTest
 
         {
 
-            txtNumRecords.Text = String.Format(" {0} of {1} ", booksBindingSource.Position + 1, booksBindingSource.Count);
+            txtNumRecords.Text = String.Format(" {0} of {1} ", 
+                booksBindingSource.Position + 1, booksBindingSource.Count);
         }
 
 
@@ -200,10 +214,7 @@ namespace LibraryTest
 
         }
 
-        private void txtNumRecords_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         //step 11
         private void lblExit_Click(object sender, EventArgs e)
@@ -214,6 +225,18 @@ namespace LibraryTest
         private void txtISBN_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblComBookLib_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            booksDataAdapter = new SqlDataAdapter("SELECT * FROM tblBooks", DBConnectionString);
+            booksDataAdapter.Fill(booksDataset, "tblBooks");
         }
     }
 }
