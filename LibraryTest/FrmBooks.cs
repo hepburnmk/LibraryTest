@@ -232,11 +232,14 @@ namespace LibraryTest
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void btnSynopsis_Click_1(object sender, EventArgs e)
         {
 
-            booksDataAdapter = new SqlDataAdapter("SELECT * FROM tblBooks", DBConnectionString);
-            booksDataAdapter.Fill(booksDataset, "tblBooks");
+            MessageBox.Show("In the Inferno,  Dante's protagonist - and his reader - is presented with a graphic vision of the dreadful consequences of sin," +
+                " and encounters an all-too-human array of noble, grotesque, beguiling,ridiculous and horrific characters.");
+
         }
     }
 }

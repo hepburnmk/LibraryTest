@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSearch));
             this.tblBooksDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +79,15 @@
             // 
             this.tblBooksDataGridView.AutoGenerateColumns = false;
             this.tblBooksDataGridView.BackgroundColor = System.Drawing.Color.Honeydew;
+            this.tblBooksDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Proza Libre", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblBooksDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tblBooksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tblBooksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -91,12 +102,22 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.tblBooksDataGridView.DataSource = this.tblBooksBindingSource;
-            this.tblBooksDataGridView.Location = new System.Drawing.Point(0, 133);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Proza Libre", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblBooksDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tblBooksDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.tblBooksDataGridView.Location = new System.Drawing.Point(0, 140);
             this.tblBooksDataGridView.Name = "tblBooksDataGridView";
             this.tblBooksDataGridView.RowHeadersWidth = 51;
             this.tblBooksDataGridView.RowTemplate.Height = 24;
             this.tblBooksDataGridView.Size = new System.Drawing.Size(808, 273);
             this.tblBooksDataGridView.TabIndex = 0;
+            this.tblBooksDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblBooksDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

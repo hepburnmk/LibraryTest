@@ -84,5 +84,10 @@ namespace LibraryTest
             homefrm.Show(); 
            
         }
+
+        private void tblBooksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     }
