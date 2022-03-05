@@ -18,22 +18,26 @@ namespace LibraryTest
             InitializeComponent();
         }
 
+        //Fills the dataGridView with data from tblBooks 
         private void FrmSearch_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'lIBRARYDataSet.tblBooks' table. You can move, or remove it, as needed.
+            // This line of code loads data into the 'lIBRARYDataSet.tblBooks' table. 
             this.tblBooksTableAdapter.Fill(this.lIBRARYDataSet.tblBooks);
 
         }
 
         private void searchToolStripButton_Click(object sender, EventArgs e)
         {
-       
+
 
         }
+        //Changes the colour of the border in the app. 
         protected override void OnPaint(PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.FromArgb(31, 61, 12), ButtonBorderStyle.Solid);
         }
+
+        //title search method
         private void titleToolStripButton_Click(object sender, EventArgs e)
         {
             try
@@ -46,7 +50,7 @@ namespace LibraryTest
             }
 
         }
-
+        //author search method
         private void author_ToolStripButton_Click(object sender, EventArgs e)
         {
             try
@@ -59,7 +63,7 @@ namespace LibraryTest
             }
 
         }
-
+        //genre search method
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
@@ -73,16 +77,22 @@ namespace LibraryTest
 
         }
 
+        //replaces the list of books with the entire list of books 
         private void btnClear_Click(object sender, EventArgs e)
         {
             this.tblBooksTableAdapter.Fill(this.lIBRARYDataSet.tblBooks);
         }
-
+        // this will return to FrmBooks, where you can exit as well. 
         private void btnHome_Click(object sender, EventArgs e)
         {
             FrmBooks homefrm = new FrmBooks();
-            homefrm.Show(); 
-           
+            homefrm.Show();
+
+        }
+
+        private void tblBooksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
-    }
+}

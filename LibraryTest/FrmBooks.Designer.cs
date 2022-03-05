@@ -282,7 +282,7 @@
             this.btnSynopsis.TabIndex = 27;
             this.btnSynopsis.Text = "See Synopsis";
             this.btnSynopsis.UseVisualStyleBackColor = true;
-            this.btnSynopsis.Click += new System.EventHandler(this.button1_Click);
+            this.btnSynopsis.Click += new System.EventHandler(this.btnSynopsis_Click_1);
             // 
             // pictureBox1
             // 
