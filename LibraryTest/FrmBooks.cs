@@ -42,7 +42,7 @@ namespace LibraryTest
         private void Frm1_Load(object sender, EventArgs e)
         {
 
-       
+
             //Step 10 error handling, if DB is not connected
             try
             {
@@ -96,7 +96,7 @@ namespace LibraryTest
             txtGenre.DataBindings.Add("Text", booksBindingSource, "Genre");
 
             txtPub.DataBindings.Add("Text", booksBindingSource, "Publisher");
-           
+
             txtYearPub.DataBindings.Add("Text", booksBindingSource, "YearPublished");
 
 
@@ -105,6 +105,7 @@ namespace LibraryTest
 
 
         }
+        //THis is just changing the colour of the border in the app 
         protected override void OnPaint(PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.FromArgb(31, 61, 12), ButtonBorderStyle.Solid);
@@ -127,7 +128,7 @@ namespace LibraryTest
                 booksBindingSource.EndEdit(); // no more changes are carried through
                 dbSQLCommands = new SqlCommandBuilder(booksDataAdapter); // connecting data adaptor to SQl builder
                 booksDataAdapter.Update(booksDataset, "tblBooks");
-               
+
             }
             catch (Exception ex)
             {
@@ -158,7 +159,7 @@ namespace LibraryTest
             booksDataAdapter.Update(booksDataset, "tblBooks");
             MessageBox.Show("Book Deleted");
         }
-        
+        // Go to FrmSearch 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             FrmSearch searchFrom = new FrmSearch();
@@ -179,43 +180,45 @@ namespace LibraryTest
 
         }
         // Step 9
-        //index no 1 is 0, +1 to make it more readable
+        //index no 1 is 0, +1 to make it more readable to humans
         private void numRecordsCountDisplay()
 
         {
 
-            txtNumRecords.Text = String.Format(" {0} of {1} ", 
+            txtNumRecords.Text = String.Format(" {0} of {1} ",
                 booksBindingSource.Position + 1, booksBindingSource.Count);
         }
 
 
         //Step 8
+        // First Listing in DB
         private void btnFirst_Click(object sender, EventArgs e)
         {
             booksBindingSource.MoveFirst();
 
         }
-
+        //Previous
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             booksBindingSource.MovePrevious();
 
         }
-
+        //Next
         private void btnNext_Click(object sender, EventArgs e)
         {
             booksBindingSource.MoveNext();
 
         }
 
+        //Last
         private void btnLast_Click(object sender, EventArgs e)
         {
             booksBindingSource.MoveLast();
 
         }
 
-      
 
+        //Exit Application Safely
         //step 11
         private void lblExit_Click(object sender, EventArgs e)
         {
@@ -232,6 +235,11 @@ namespace LibraryTest
 
         }
 
+
+        //This not the correct code for what I want to be happening, but it shows what 
+        //if we had more time, how I wished the app behaves - for each record displayed a pop of Synopsis is possible.
+        //
+        //Pop up of the synopsis for Dante's inferno, record no. 45, Last in series. 
 
 
         private void btnSynopsis_Click_1(object sender, EventArgs e)
